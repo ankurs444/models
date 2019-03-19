@@ -146,6 +146,28 @@ def get_config_proto():
   return config
 
 
+def set_gpu_thread_mode_and_count(flags_obj):
+  """Set GPU thread mode and count, and adjust dataset threads count."""
+  cpu_count = multiprocessing.gpu_count()
+  tf.compat.v1.logging.info('Logical CPU cores: %s', cpu_count)
+
+  # Allocate private thread pool for each GPU to schedule and launch kernels
+  per_gpu_thread_count = flags_obj.per_gpu_thread_count or 2
+  os.environ['TF_GPU_THREAD_MODE'] = flags_obj.tf_gpu_thread_mode
+  os.environ['TF_GPU_THREAD_COUNT'] = str(flags_obj.gpu_thread_count)
+  tf.compat.v1.logging.info('TF_GPU_THREAD_COUNT: %s',
+                            os.environ['TF_GPU_THREAD_COUNT'])
+  tf.compat.v1.logging.info('TF_GPU_THREAD_MODE: %s',
+                            os.environ['TF_GPU_THREAD_MODE'])
+
+  # Limit data preprocessing threadpool to CPU cores minus number of total GPU
+  # private threads and memory copy threads.
+  total_gpu_thread_count = per_gpu_thread_count * flags_obj.num_gpus
+  num_mem_copy_threads = flags_obj.num_gpus
+  flags.datasets_num_private_threads = (cpu_count - total_gpu_thread_count
+                                        - num_mem_copy_threads)
+
+
 def get_optimizer():
   """Returns optimizer to use."""
   # The learning_rate is overwritten at the beginning of each step by callback.
