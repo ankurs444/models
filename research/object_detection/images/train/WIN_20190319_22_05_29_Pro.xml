@@ -1,0 +1,38 @@
+<annotation>
+	<folder>SelectAll</folder>
+	<filename>WIN_20190319_22_05_29_Pro.jpg</filename>
+	<path>C:\Users\ANKUR SHARMA\Pictures\Camera Roll\SelectAll\WIN_20190319_22_05_29_Pro.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>720</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Select All</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>59</xmin>
+			<ymin>152</ymin>
+			<xmax>500</xmax>
+			<ymax>644</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Select All</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>844</xmin>
+			<ymin>92</ymin>
+			<xmax>1238</xmax>
+			<ymax>618</ymax>
+		</bndbox>
+	</object>
+</annotation>

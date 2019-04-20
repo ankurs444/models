@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Save</folder>
+	<filename>WIN_20190319_21_22_39_Pro.jpg</filename>
+	<path>C:\Users\ANKUR SHARMA\Pictures\Camera Roll\Save\WIN_20190319_21_22_39_Pro.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>720</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Save</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>239</xmin>
+			<ymin>219</ymin>
+			<xmax>517</xmax>
+			<ymax>708</ymax>
+		</bndbox>
+	</object>
+</annotation>

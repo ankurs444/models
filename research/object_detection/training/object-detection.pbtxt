@@ -1,0 +1,19 @@
+item {
+  id: 1
+  name: 'Copy'
+}
+
+item {
+  id: 2
+  name: 'Paste'
+}
+
+item {
+  id: 3
+  name: 'Save'
+}
+
+item {
+  id: 4
+  name: 'Select All'
+}
